@@ -11,7 +11,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 }).addTo(mymap);
 
 function onMapClick(e) {
-    alert("You clicked the map at " + e.latlng);
+    alert("Harita üzerinde şu noktaya dokundunuz: " + e.latlng);
 }
 
 mymap.on('click', onMapClick);
