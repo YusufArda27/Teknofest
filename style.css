@@ -1,1 +1,6 @@
 #mapid { height: 180px; }
+
+body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
