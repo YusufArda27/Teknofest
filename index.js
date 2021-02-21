@@ -27,6 +27,6 @@ L.Routing.control({
     routeWhileDragging: true,
     geocoder: L.Control.Geocoder.nominatim(),
     lineOptions: {
-        styles: [{color: 'black', opacity: 0.5, weight: 5}]
+        styles: [{color: 'red', opacity: 0.5, weight: 5}]
     }
 }).addTo(map);
