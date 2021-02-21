@@ -18,10 +18,15 @@ function onMapClick(e) {
 }
 
 map.on('click', onMapClick);
+
 L.Routing.control({
     waypoints: [
         L.latLng(41.168834, 28.923225),
         L.latLng(41.054243, 29.236336)
     ],
-    routeWhileDragging: true
+    routeWhileDragging: true,
+    geocoder: L.Control.Geocoder.nominatim(),
+    lineOptions: {
+        styles: [{color: 'black', opacity: 0.5, weight: 5}]
+    }
 }).addTo(map);
