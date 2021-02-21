@@ -1,5 +1,4 @@
-
-var mymap = L.map('mapid').setView([41.026770,29.063398], 13);
+var map = L.map('mapid').setView([41.015137, 28.979530], 13);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 		maxZoom: 18,
@@ -8,24 +7,21 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 		id: 'mapbox/streets-v11',
 		tileSize: 512,
 		zoomOffset: -1
-}).addTo(mymap);
-
-
-var greenIcon = L.icon({
-    iconUrl: 'leaf-green.png',
-    shadowUrl: 'leaf-shadow.png',
-
-    iconSize:     [38, 95], // size of the icon
-    shadowSize:   [50, 64], // size of the shadow
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62],  // the same for the shadow
-    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-});
+}).addTo(map);
+var popup = L.popup();
 
 function onMapClick(e) {
-    var marker = L.marker([e.latlng.lat, e.latlng.lng], {icon: greenIcon}).addTo(mymap);
+    popup
+        .setLatLng(e.latlng)
+        .setContent("Haritaya Dokunduğunuz Nokta: " + e.latlng.toString())
+        .openOn(map);
 }
 
-mymap.on('click', onMapClick);
-
-
+map.on('click', onMapClick);
+L.Routing.control({
+    waypoints: [
+        L.latLng(41.168834, 28.923225),
+        L.latLng(41.054243, 29.236336)
+    ],
+    routeWhileDragging: true
+}).addTo(map);
