@@ -1,6 +1,46 @@
-#mapid { height: 180px; }
-
-body {
-    overflow-y: hidden;
+body{
+    background-color: rgb(245, 245, 245);
     overflow-x: hidden;
+    overflow-y: hidden;
 }
+:root{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.menu *{
+    text-align: left;
+}
+table{
+    float: left;
+}
+.menu{
+    padding-right: 25px;
+    padding-left: 18px;
+    max-height: 100px;
+}
+.harita{
+    width: auto;
+    height: auto;
+}
+.harita-uygulamasi{
+    width: 100%;
+    height: 100%;
+}
+.grid-container{
+    height: 95vh;
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+@media only screen and (max-width: 767px) {
+    :root{
+        font-size: 10px;
+    }
+    .blok{
+        float: left;
+        padding-left: 1vw;
+        width: 28vw;
+    }
+    .grid-container{
+        grid-template-columns: 100%;
+    }
+  }
+  
