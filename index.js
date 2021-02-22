@@ -28,5 +28,12 @@ L.Routing.control({
     geocoder: L.Control.Geocoder.nominatim(),
     lineOptions: {
         styles: [{color: 'red', opacity: 0.5, weight: 5}]
+    },
+    altLineOptions: {
+        styles: [
+            {color: 'black', opacity: 0.15, weight: 9},
+            {color: 'white', opacity: 0.8, weight: 6},
+            {color: 'blue', opacity: 0.5, weight: 2}
+        ]
     }
 }).addTo(map);
