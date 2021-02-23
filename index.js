@@ -37,3 +37,5 @@ L.Routing.control({
         ]
     }
 }).addTo(map);
+
+console.log($(".leaflet-routing-geocoder")[0].text)
