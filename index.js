@@ -19,7 +19,7 @@ function onMapClick(e) {
 
 map.on('click', onMapClick);
 
-var control = L.Routing.control({
+L.Routing.control({
     waypoints: [
         L.latLng(41.168834, 28.923225),
         L.latLng(41.054243, 29.236336)
@@ -38,10 +38,22 @@ var control = L.Routing.control({
         ]
     }
 })
+.addTo(map)
 
-control.addTo(map);
-i = 0
-
-
-
-   
+introJs().setOptions({
+    steps:[
+        {intro:"Harita Uygulamasına hoşgeldin"},
+        {element: document.querySelector('.leaflet-top'),
+        intro:"Buradan büyüklüğü değiştirebilirisin.",
+        position:"top"},
+        {element: document.querySelector('.leaflet-right'),
+        intro:"Buradan ise gideceğin yerler hakkında bilgileri bulabilirsin.",
+        position:"top"},
+        {element: document.querySelector('.leaflet-routing-geocoders '),
+        intro:"Buradan nereye gideceğini ayarlayabilirsin.",
+        position:"top"},
+        {element: document.querySelector('.leaflet-routing-add-waypoint '),
+        intro:"Buradan rotana farklı uğrama yerleri ekleyebilirsin.",
+        position:"top"}
+    ]
+}).start();

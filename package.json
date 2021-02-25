@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/YusufArda27/Teknofest#readme",
   "dependencies": {
+    "intro.js": "^3.3.1",
     "leaflet-routing-machine": "^3.2.12"
   }
 }
